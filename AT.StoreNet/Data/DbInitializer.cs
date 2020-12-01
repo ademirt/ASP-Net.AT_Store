@@ -1,4 +1,5 @@
-﻿using AT.StoreNet.Models;
+﻿using AT.StoreNet.Infra.Helpers;
+using AT.StoreNet.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
 
@@ -27,7 +28,12 @@ namespace AT.StoreNet.Data
 
             context.Produtos.AddRange(produtos);
 
-            context.Usuarios.Add(new Usuario() { Nome = "Ademir Tafner", Email = "ademir@email.com", Senha = "12345" });
+            context.Usuarios.Add(new Usuario()
+            {
+                Nome = "Usuario",
+                Email = "usuario@email.com",
+                Senha = "12345".Encrypt()
+            }) ;
 
             context.SaveChanges();
         }

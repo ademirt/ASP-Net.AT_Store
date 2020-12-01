@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace AT.StoreNet.Controllers
 {    
+    [Authorize]
     public class ProdutosController : Controller
     {
         /*

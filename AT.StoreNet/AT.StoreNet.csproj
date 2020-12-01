@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Data\ATStoreDataContext.cs" />
@@ -136,7 +137,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infra\Helpers\StringHelpers.cs" />
     <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\LoginVM.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\TipoProduto.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -149,6 +152,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS_custom\site.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\toastr.css" />
@@ -298,6 +302,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Conta\Login.cshtml" />
+    <Content Include="Views\Shared\_menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
