@@ -1,5 +1,6 @@
 ﻿using AT.StoreNet.Domain.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration;
 
 namespace AT.StoreNet.Data.EF.Maps
@@ -26,7 +27,11 @@ namespace AT.StoreNet.Data.EF.Maps
             Property(c => c.Email)
                 .HasColumnType("varchar")
                 .HasMaxLength(85)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(new IndexAttribute("UK_dbo.Usuario.Email") { IsUnique = true })
+                    );
 
             Property(c => c.Senha)
                 .HasColumnType("char")

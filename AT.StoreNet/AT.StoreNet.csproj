@@ -132,8 +132,6 @@
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
-    <Compile Include="Data\ATStoreDataContext.cs" />
-    <Compile Include="Data\DbInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -318,6 +316,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AT.StoreNet.Data\AT.StoreNet.Data.csproj">
+      <Project>{f60450ec-70fb-4292-b1bd-0c9bddf4b534}</Project>
+      <Name>AT.StoreNet.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AT.StoreNet.Domain\AT.StoreNet.Domain.csproj">
+      <Project>{340c01e1-a879-4a32-a79c-18f4ee05bf0d}</Project>
+      <Name>AT.StoreNet.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

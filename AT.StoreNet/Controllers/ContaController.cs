@@ -1,4 +1,4 @@
-﻿using AT.StoreNet.Data;
+﻿using AT.StoreNet.Data.EF;
 using AT.StoreNet.Infra.Helpers;
 using AT.StoreNet.Models;
 using System.Linq;

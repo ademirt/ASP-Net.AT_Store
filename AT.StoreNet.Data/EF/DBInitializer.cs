@@ -1,5 +1,5 @@
 ﻿using AT.StoreNet.Domain.Entities;
-using AT.StoreNet.Domain.Infra.Helpers;
+using FN.Store.Domain.Helpers;
 using System.Collections.Generic;
 using System.Data.Entity;
 
@@ -28,19 +28,12 @@ namespace AT.StoreNet.Data.EF
 
             context.Produtos.AddRange(produtos);
 
-            context.Usuarios.AddRange(
-                new List<Usuario>() {
-                    new Usuario() {
-                        Nome = "Usuario",
-                        Email = "usuario@email.com",
-                        Senha = "12345".Encrypt()
-                    },
-                    new Usuario() {
-                        Nome = "adm",
-                        Email = "adm@email.com",
-                        Senha = "@adm1234567890".Encrypt()
-                    }
-                });
+            context.Usuarios.Add(new Usuario()
+            {
+                Nome = "Usuario",
+                Email = "usuario@email.com",
+                Senha = "12345".Encrypt()
+            });
 
 
             context.SaveChanges();

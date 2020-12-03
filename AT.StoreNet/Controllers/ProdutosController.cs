@@ -1,5 +1,5 @@
-﻿using AT.StoreNet.Data;
-using AT.StoreNet.Models;
+﻿using AT.StoreNet.Data.EF;
+using AT.StoreNet.Domain.Entities;
 using System.Linq;
 using System.Web.Mvc;
 
