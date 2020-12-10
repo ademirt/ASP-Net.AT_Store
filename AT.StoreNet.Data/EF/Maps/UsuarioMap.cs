@@ -35,7 +35,7 @@ namespace AT.StoreNet.Data.EF.Maps
 
             Property(c => c.Senha)
                 .HasColumnType("char")
-                .HasMaxLength(90)
+                .HasMaxLength(88)
                 .IsRequired();
 
             Property(c => c.DtCadastro);

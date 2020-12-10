@@ -1,7 +1,7 @@
-﻿using AT.StoreNet.Data.EF;
-using AT.StoreNet.Infra.Helpers;
+﻿using AT.StoreNet.Data.EF.Repositories;
+using AT.StoreNet.Domain.Contracts.Repositories;
 using AT.StoreNet.Models;
-using System.Linq;
+using AT.StoreNet.Domain.Helpers;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -9,7 +9,7 @@ namespace AT.StoreNet.Controllers
 {
     public class ContaController : Controller
     {
-        private readonly ATStoreDataContext _db = new ATStoreDataContext();
+        private readonly IUsuarioRepository _usuarioRepository = new UsuarioRepositoryEF();
 
         // GET: Conta
         [HttpGet]
@@ -22,7 +22,7 @@ namespace AT.StoreNet.Controllers
         [HttpPost]
         public ActionResult Login(LoginVM model)
         {
-            var usuario = _db.Usuarios.FirstOrDefault(u => u.Email.ToLower() == model.Email.ToLower());
+            var usuario = _usuarioRepository.Get(model.Email);
 
             if (usuario == null)
             {
@@ -61,7 +61,7 @@ namespace AT.StoreNet.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            _db.Dispose();
+            _usuarioRepository.Dispose();
         }
     }
 }
