@@ -1,9 +1,6 @@
 ﻿using AT.StoreNet.Data.EF.Repositories;
 using AT.StoreNet.Domain.Contracts.Repositories;
-using AT.StoreNet.Domain.Entities;
-using AT.StoreNet.ViewModels.Produtos.Index;
 using AT.StoreNet.ViewModels.Produtos.AddEdit.Maps;
-using System.Linq;
 using System.Web.Mvc;
 using AT.StoreNet.ViewModels.Produtos.Index.Maps;
 using AT.StoreNet.ViewModels.Produtos.AddEdit;
@@ -22,8 +19,16 @@ namespace AT.StoreNet.Controllers
 
         */
 
-        private readonly IProdutoRepository _produtoRepository = new ProdutoRepositoryEF();
-        private readonly ITipoProdutoRepository _tipoProdutoRepository = new TipoProdutoRepositoryEF();
+        private readonly IProdutoRepository _produtoRepository;
+        private readonly ITipoProdutoRepository _tipoProdutoRepository;
+
+
+        public ProdutosController(IProdutoRepository produtoRepository
+                                 , ITipoProdutoRepository tipoProdutoRepository)
+        {
+            _produtoRepository = produtoRepository;
+            _tipoProdutoRepository = tipoProdutoRepository;
+        }
 
         public ViewResult Index()
         {
@@ -61,7 +66,7 @@ namespace AT.StoreNet.Controllers
                     _produtoRepository.Add(produto);
                 }
                 else
-                {                    
+                {
                     _produtoRepository.Edit(produto);
                 }
 

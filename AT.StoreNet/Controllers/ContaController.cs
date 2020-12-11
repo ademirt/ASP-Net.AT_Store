@@ -1,7 +1,6 @@
-﻿using AT.StoreNet.Data.EF.Repositories;
-using AT.StoreNet.Domain.Contracts.Repositories;
-using AT.StoreNet.Models;
+﻿using AT.StoreNet.Domain.Contracts.Repositories;
 using AT.StoreNet.Domain.Helpers;
+using AT.StoreNet.ViewModels.Conta.Login;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -9,7 +8,12 @@ namespace AT.StoreNet.Controllers
 {
     public class ContaController : Controller
     {
-        private readonly IUsuarioRepository _usuarioRepository = new UsuarioRepositoryEF();
+        private readonly IUsuarioRepository _usuarioRepository;
+
+        public ContaController(IUsuarioRepository usuarioRepository)
+        {
+            _usuarioRepository = usuarioRepository;
+        }
 
         // GET: Conta
         [HttpGet]
