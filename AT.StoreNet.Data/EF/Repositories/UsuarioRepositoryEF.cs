@@ -8,6 +8,10 @@ namespace AT.StoreNet.Data.EF.Repositories
 {
     public class UsuarioRepositoryEF : RepositoryEF<Usuario>, IUsuarioRepository
     {
+        public UsuarioRepositoryEF(ATStoreDataContextEF db) : base(db)
+        {
+        }
+
         public Usuario Get(string email)
         {
             return _db.Usuarios.FirstOrDefault(u=>u.Email.ToLower() == email.ToLower());

@@ -5,6 +5,8 @@ namespace AT.StoreNet.Data.EF.Repositories
 {
     public class TipoProdutoRepositoryEF : RepositoryEF<TipoProduto>, ITipoProdutoRepository
     {
-        
+        public TipoProdutoRepositoryEF(ATStoreDataContextEF db) : base(db)
+        {
+        }
     }
 }

@@ -7,7 +7,12 @@ namespace AT.StoreNet.Data.EF.Repositories
 {
     public class RepositoryEF<T> : IRepository<T> where T : Entity
     {
-        protected readonly ATStoreDataContext _db = new ATStoreDataContext();
+        protected readonly ATStoreDataContextEF _db;
+
+        public RepositoryEF(ATStoreDataContextEF db)
+        {
+            _db = db;
+        }
 
         public IEnumerable<T> Get()
         {
@@ -44,7 +49,6 @@ namespace AT.StoreNet.Data.EF.Repositories
 
         public void Dispose()
         {
-            _db.Dispose();
         }
     }
 }

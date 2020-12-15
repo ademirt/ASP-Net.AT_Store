@@ -7,6 +7,10 @@ namespace AT.StoreNet.Data.EF.Repositories
 {
     public class ProdutoRepositoryEF : RepositoryEF<Produto>, IProdutoRepository
     {
+        public ProdutoRepositoryEF(ATStoreDataContextEF db) : base(db)
+        {
+        }
+
         public IEnumerable<Produto> GetByNameContains(string str)
         {
             return _db.Produtos.Where(s => s.Nome.Contains(str.ToLower()));

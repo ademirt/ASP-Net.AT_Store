@@ -5,9 +5,9 @@ using System.Data.Entity;
 
 namespace AT.StoreNet.Data.EF
 {
-    internal class DbInitializer : CreateDatabaseIfNotExists<ATStoreDataContext>
+    internal class DbInitializer : CreateDatabaseIfNotExists<ATStoreDataContextEF>
     {
-        protected override void Seed(ATStoreDataContext context)
+        protected override void Seed(ATStoreDataContextEF context)
         {
             var alimento = new TipoProduto() { Nome = "Alimento" };
             var higiene = new TipoProduto() { Nome = "Higiene" };

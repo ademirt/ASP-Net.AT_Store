@@ -95,8 +95,6 @@ namespace AT.StoreNet.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            _produtoRepository.Dispose();
-            _tipoProdutoRepository.Dispose();
         }
     }
 }

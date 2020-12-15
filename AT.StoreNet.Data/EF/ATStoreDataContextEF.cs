@@ -3,9 +3,9 @@ using System.Data.Entity;
 
 namespace AT.StoreNet.Data.EF
 {
-    public class ATStoreDataContext : DbContext
+    public class ATStoreDataContextEF : DbContext
     {
-        public ATStoreDataContext() : base("ATStore_DB")
+        public ATStoreDataContextEF() : base("ATStore_DB")
         {
             Database.SetInitializer(new DbInitializer());
         }
